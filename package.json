@@ -4,6 +4,7 @@
   "description": "Enables VPN support within Gaming Mode.",
   "scripts": {
     "build": "shx rm -rf dist && rollup -c",
+    "buildzip": "rollup -c",
     "watch": "rollup -c -w"
   },
   "repository": {
