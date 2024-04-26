@@ -21,4 +21,4 @@ jobs:
         standalone: true
         dest: ~/setup-pnpm
     - name: build
-      run: pnpm install && pnpm build && zip -r dist.zip dist
+      run: pnpm i && pnpm run build && zip -r dist.zip dist
