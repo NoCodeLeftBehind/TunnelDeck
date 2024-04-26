@@ -23,5 +23,5 @@ jobs:
     - name: build
       run: |
         pnpm i
-        pnpm run build
+        pnpm run watch
         zip -r dist.zip dist
