@@ -1,19 +1,24 @@
 on: workflow_dispatch
+
 jobs:
  build:
   runs-on: ubuntu-latest
   env:
     RUNNER_TOOL_CACHE: /toolcache
+    
 steps:
-- uses: actions/checkout@v4
-- uses: actions/setup-node@v4
+- name: git-checkout
+  uses: actions/checkout@v4
+- name: setup-node
+  uses: actions/setup-node@v4
   with:
     node-version: 20
-- uses: pnpm/action-setup@v3
+- name: setup-pnpm
+  uses: pnpm/action-setup@v3
   with:
     version: 8
     run_install: false
     standalone: true
     dest: ~/setup-pnpm
-- name: Build
+- name: build
   run: pnpm install && pnpm build && zip -r dist.zip dist
