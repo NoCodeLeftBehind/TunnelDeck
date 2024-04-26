@@ -6,19 +6,19 @@ jobs:
   env:
     RUNNER_TOOL_CACHE: /toolcache
     
-steps:
-- name: git-checkout
-  uses: actions/checkout@v4
-- name: setup-node
-  uses: actions/setup-node@v4
-  with:
-    node-version: 20
-- name: setup-pnpm
-  uses: pnpm/action-setup@v3
-  with:
-    version: 8
-    run_install: false
-    standalone: true
-    dest: ~/setup-pnpm
-- name: build
-  run: pnpm install && pnpm build && zip -r dist.zip dist
+  steps:
+    - name: git-checkout
+      uses: actions/checkout@v4
+    - name: setup-node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+    - name: setup-pnpm
+      uses: pnpm/action-setup@v3
+      with:
+        version: 8
+        run_install: false
+        standalone: true
+        dest: ~/setup-pnpm
+    - name: build
+      run: pnpm install && pnpm build && zip -r dist.zip dist
