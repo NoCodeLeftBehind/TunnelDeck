@@ -15,8 +15,5 @@ steps:
     run_install: false
     standalone: true
     dest: ~/setup-pnpm
-
 - name: Build
-  run:
-    pnpm install && pnpm build
-    zip -r dist.zip dist
+  run: pnpm install && pnpm build && zip -r dist.zip dist
