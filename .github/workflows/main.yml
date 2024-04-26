@@ -17,7 +17,6 @@ steps:
     dest: ~/setup-pnpm
 
 - name: Build
-  run: |
-    # Add your build commands here
+  run:
     pnpm install && pnpm build
     zip -r dist.zip dist
