@@ -31,3 +31,20 @@ jobs:
         path: |
           dist
           !dist/**/*.md
+    - name: Build release folder
+      run: |
+        mkdir -p release/TunnelDeck
+        cp -r defaults release/TunnelDeck
+        cp -r dist release/TunnelDeck
+        cp  LICENSE release/TunnelDeck
+        cp  README.md release/TunnelDeck
+        cp  main.py release/TunnelDeck
+        cp  package.json release/TunnelDeck
+        cp  plugin.json release/TunnelDeck
+    - name: Archive release as zip
+      uses: actions/upload-artifact@v4
+      with:
+        name: release
+        path: |
+          release
+          
