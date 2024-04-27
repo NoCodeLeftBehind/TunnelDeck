@@ -34,7 +34,7 @@ jobs:
     - name: Build release folder
       run: |
         mkdir -p release/TunnelDeck
-        cp -r defaults release/TunnelDeck
+        cp -r defaults/extensions release/TunnelDeck
         cp -r dist release/TunnelDeck
         cp  LICENSE release/TunnelDeck
         cp  README.md release/TunnelDeck
